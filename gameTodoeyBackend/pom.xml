@@ -35,6 +35,13 @@
   		<version>2.9.5</version>
 	</dependency>
 
+	<!-- Add Support for JSP to get rid of Eclipse error -->
+	<dependency>
+  		<groupId>javax.servlet.jsp</groupId>
+  		<artifactId>javax.servlet.jsp-api</artifactId>
+  		<version>2.3.1</version>
+	</dependency>
+	
 	<!-- JAVAX.SERVLET-API -->
 	<dependency>
   		<groupId>javax.servlet</groupId>
