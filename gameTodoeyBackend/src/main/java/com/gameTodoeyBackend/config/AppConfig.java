@@ -90,8 +90,8 @@ public class AppConfig {
 	
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
-		
-		// create session factorys
+	
+		// create session factories
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		
 		// set the properties
