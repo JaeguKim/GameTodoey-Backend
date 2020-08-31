@@ -23,7 +23,7 @@ public class GameServiceRestClientImpl implements GameService {
 	
 	@Autowired
 	public GameServiceRestClientImpl(RestTemplate theRestTemplate, 
-			@Value("${gameTodoey.rest.url}") String theUrl) {
+			@Value("${game.rest.url}") String theUrl) {
 		
 		restTemplate = theRestTemplate;
 		restUrl = theUrl;

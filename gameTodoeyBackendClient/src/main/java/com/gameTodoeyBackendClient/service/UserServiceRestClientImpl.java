@@ -22,7 +22,7 @@ public class UserServiceRestClientImpl implements UserService {
 	
 	@Autowired
 	public UserServiceRestClientImpl(RestTemplate theRestTemplate, 
-			@Value("${gameTodoey.rest.url}") String theUrl) {
+			@Value("${user.rest.url}") String theUrl) {
 		
 		restTemplate = theRestTemplate;
 		restUrl = theUrl;
