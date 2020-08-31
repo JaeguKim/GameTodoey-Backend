@@ -2174,3 +2174,136 @@ Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have 
 2020-08-31 12:17:09,576 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2020-08-31 12:17:09,578 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-08-31 12:17:09,578 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 12:51:40,166 [Worker-11: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-08-31 12:53:57,351 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.luv2code.springdemo:crm-web-app-rest-client-demo:1.0.0 @ /Users/jaegu/Desktop/crm-web-app-rest-client-demo/pom.xml.
+2020-08-31 12:53:59,096 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /crm-web-app-rest-client-demo/src/main/java
+2020-08-31 12:53:59,096 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /crm-web-app-rest-client-demo/src/main/resources
+2020-08-31 12:53:59,097 [Worker-12: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /crm-web-app-rest-client-demo/src/test/java
+2020-08-31 12:53:59,545 [Worker-12: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2020-08-31 12:54:00,396 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:54:00,406 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 12:54:00,416 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:54:00,417 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/crm-web-app-rest-client-demo/src/test/resources
+2020-08-31 12:54:21,437 [Worker-15: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.luv2code.springdemo:crm-web-app-rest-client-demo:1.0.0 @ /Users/jaegu/Desktop/crm-web-app-rest-client-demo/pom.xml.
+2020-08-31 12:54:21,559 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:54:21,561 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 12:54:21,564 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:54:21,564 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/crm-web-app-rest-client-demo/src/test/resources
+2020-08-31 12:54:22,983 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:54:22,987 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 12:54:22,998 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:54:22,999 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/crm-web-app-rest-client-demo/src/test/resources
+2020-08-31 12:57:49,427 [Worker-18: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.luv2code.springdemo:crm-web-app-rest-client-demo:1.0.0 @ /Users/jaegu/Desktop/crm-web-app-rest-client-demo/pom.xml.
+2020-08-31 12:57:49,936 [Worker-18: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /crm-web-app-rest-client-demo/src/main/java
+2020-08-31 12:57:49,936 [Worker-18: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /crm-web-app-rest-client-demo/src/main/resources
+2020-08-31 12:57:49,936 [Worker-18: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /crm-web-app-rest-client-demo/src/test/java
+2020-08-31 12:57:50,119 [Worker-18: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2020-08-31 12:57:50,493 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:57:50,494 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 12:57:50,503 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-08-31 12:57:50,504 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/crm-web-app-rest-client-demo/src/test/resources
+2020-08-31 13:03:15,118 [Worker-19: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/pom.xml
+2020-08-31 13:03:15,419 [Worker-19: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.jaeguKim:gameTodoeyBackend-Client:1.0 @ /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/pom.xml.
+2020-08-31 13:03:15,880 [Worker-19: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /gameTodoeyBackend-Client/src/main/java
+2020-08-31 13:03:15,881 [Worker-19: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /gameTodoeyBackend-Client/src/test/java
+2020-08-31 13:03:18,531 [Worker-19: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2020-08-31 13:03:18,870 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:03:18,870 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:03:18,873 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:03:18,873 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:04:38,013 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:04:38,014 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 13:04:38,024 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:04:38,024 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 13:04:50,673 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:04:50,676 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 13:04:50,677 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:04:50,678 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 13:05:19,101 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:05:19,102 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:05:19,103 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:05:19,103 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:06:15,253 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:06:15,253 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:06:15,254 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:06:15,255 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:07:04,759 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:07:04,759 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:07:04,760 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:07:04,760 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:07:14,202 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:07:14,202 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:07:14,205 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:07:14,205 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:08:03,575 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:03,575 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:08:03,577 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:03,577 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:08:10,205 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:10,205 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:08:10,207 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:10,207 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:08:23,671 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:23,671 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:08:23,673 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:23,674 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:08:29,214 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:29,214 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:08:29,216 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:08:29,216 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:09:28,132 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:09:28,133 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:09:28,134 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:09:28,135 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:10:55,474 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.jaeguKim:gameTodoeyBackend:1.0 @ /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/pom.xml.
+2020-08-31 13:10:56,455 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:10:56,456 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-08-31 13:10:56,458 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:10:56,458 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 13:10:56,459 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of gameTodoeyBackend
+2020-08-31 13:10:56,461 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for gameTodoeyBackend
+2020-08-31 13:10:56,466 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:10:57,572 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:10:57,573 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 13:10:57,582 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:10:57,582 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 13:11:33,021 [Worker-12: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.jaeguKim:gameTodoeyBackend:1.0 @ /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/pom.xml.
+2020-08-31 13:11:33,591 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:11:33,592 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-08-31 13:11:33,596 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:11:33,596 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 13:11:33,597 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of gameTodoeyBackend
+2020-08-31 13:11:33,597 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for gameTodoeyBackend
+2020-08-31 13:11:33,600 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:11:34,858 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:11:34,859 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-08-31 13:11:34,868 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:11:34,868 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend/src/test/resources
+2020-08-31 13:12:44,250 [Worker-23: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.jaeguKim:gameTodoeyBackend-Client:1.0 @ /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/pom.xml.
+2020-08-31 13:12:44,644 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:12:44,644 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:12:44,645 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:12:44,646 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:12:44,646 [Worker-23: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of gameTodoeyBackend-Client
+2020-08-31 13:12:44,646 [Worker-23: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for gameTodoeyBackend-Client
+2020-08-31 13:12:44,648 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:12:59,729 [Worker-25: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.jaeguKim:gameTodoeyBackend-Client:1.0 @ /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/pom.xml.
+2020-08-31 13:13:00,122 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:00,123 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:13:00,124 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:00,125 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:13:00,125 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of gameTodoeyBackend-Client
+2020-08-31 13:13:00,125 [Worker-25: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for gameTodoeyBackend-Client
+2020-08-31 13:13:00,127 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:00,403 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:00,403 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:13:00,405 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:00,405 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:13:39,244 [Worker-23: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.jaeguKim:gameTodoeyBackend-Client:1.0 @ /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/pom.xml.
+2020-08-31 13:13:39,656 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:39,656 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/main/resources
+2020-08-31 13:13:39,657 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-08-31 13:13:39,658 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/jaegu/Desktop/GameTodoey-Backend/gameTodoeyBackend-Client/src/test/resources
+2020-08-31 13:13:39,658 [Worker-23: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of gameTodoeyBackend-Client
+2020-08-31 13:13:39,658 [Worker-23: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for gameTodoeyBackend-Client
+2020-08-31 13:13:39,660 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
