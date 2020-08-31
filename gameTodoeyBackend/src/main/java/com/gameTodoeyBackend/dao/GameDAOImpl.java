@@ -8,66 +8,67 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.gameTodoeyBackend.entity.User;
+import com.gameTodoeyBackend.entity.Game;
 
 @Repository
-public class GameDAOImpl implements UserDAO {
+public class GameDAOImpl implements GameDAO {
 
 	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
 			
 	@Override
-	public List<User> getUsers() {
+	public List<Game> getGames() {
 		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 				
 		// create a query  ... sort by last name
-		Query<User> theQuery = 
-				currentSession.createQuery("from User order by lastName",
-						User.class);
+		
+		Query<Game> theQuery = 
+				currentSession.createQuery("from game order by popularity DESC",
+						Game.class);
 		
 		// execute query and get result list
-		List<User> users = theQuery.getResultList();
+		List<Game> games = theQuery.getResultList();
 				
 		// return the results		
-		return users;
+		return games;
 	}
 
 	@Override
-	public void saveUser(User theUser) {
+	public void saveGame(Game theGame) {
 
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save/update the customer
-		currentSession.saveOrUpdate(theUser);
+		currentSession.saveOrUpdate(theGame);
 		
 	}
 
 	@Override
-	public User getUser(int theId) {
+	public Game getGame(int theId) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// now retrieve/read from database using the primary key
-		User theUser = currentSession.get(User.class, theId);
+		Game theGame = currentSession.get(Game.class, theId);
 		
-		return theUser;
+		return theGame;
 	}
 
 	@Override
-	public void deleteUser(int theId) {
+	public void deleteGame(int theId) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from User where id=:userId");
-		theQuery.setParameter("userId", theId);
+				currentSession.createQuery("delete from game where id=:gameId");
+		theQuery.setParameter("gameId", theId);
 		
 		theQuery.executeUpdate();		
 	}

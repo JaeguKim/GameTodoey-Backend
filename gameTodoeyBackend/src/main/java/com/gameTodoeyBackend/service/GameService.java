@@ -1,10 +1,10 @@
-package com.gameTodoeyBackend.dao;
+package com.gameTodoeyBackend.service;
 
 import java.util.List;
 
 import com.gameTodoeyBackend.entity.Game;
 
-public interface GameDAO {
+public interface GameService {
 
 	public List<Game> getGames();
 
