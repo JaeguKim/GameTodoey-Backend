@@ -6,7 +6,7 @@ import com.gameTodoeyBackend.entity.User;
 
 public interface UserService {
 
-	public List<User> getCustomers();
+	public List<User> getUsers();
 
 	public void saveUser(User theCustomer);
 
