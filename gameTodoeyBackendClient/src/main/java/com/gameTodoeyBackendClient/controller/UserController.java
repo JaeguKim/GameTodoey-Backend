@@ -19,7 +19,7 @@ import com.gameTodoeyBackendClient.service.UserService;
 public class UserController {
 	
 	@Autowired 
-	UserService userService;
+	private UserService userService;
 	
 	@GetMapping("/list")
 	public String listUsers(Model theModel) {

@@ -19,7 +19,7 @@ public class AppSpringMvcDispatcherServletInitializer extends AbstractAnnotation
 	@Override
 	protected String[] getServletMappings() {
 
-		return null;
+		return new String[] {"/"};
 	}
 
 }
