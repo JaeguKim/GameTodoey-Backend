@@ -11,17 +11,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.gameTodoeyBackendClient.model.Game;
 import com.gameTodoeyBackendClient.model.User;
 
 @Service
-public class UserServiceRestClientImpl implements UserService {
+public class GameServiceRestClientImpl implements GameService {
 
 	private RestTemplate restTemplate;
 	private String restUrl;
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	@Autowired
-	public UserServiceRestClientImpl(RestTemplate theRestTemplate, 
+	public GameServiceRestClientImpl(RestTemplate theRestTemplate, 
 			@Value("${gameTodoey.rest.url}") String theUrl) {
 		
 		restTemplate = theRestTemplate;
@@ -31,66 +32,66 @@ public class UserServiceRestClientImpl implements UserService {
 	}
 	
 	@Override
-	public List<User> getUsers() {
+	public List<Game> getGames() {
 		
-		logger.info("in getUsers(): Calling REST API " + restUrl);
+		logger.info("in getGames(): Calling REST API " + restUrl);
 
 		// make REST call
-		ResponseEntity<List<User>> responseEntity = 
+		ResponseEntity<List<Game>> responseEntity = 
 											restTemplate.exchange(restUrl, HttpMethod.GET, null, 
-																  new ParameterizedTypeReference<List<User>>() {});
+																  new ParameterizedTypeReference<List<Game>>() {});
 
 		// get the list of users from response
-		List<User> users = responseEntity.getBody();
+		List<Game> games = responseEntity.getBody();
 
-		logger.info("in getUsers(): users" + users);
+		logger.info("in getGames(): games" + games);
 		
-		return users;
+		return games;
 	}
 
 	@Override
-	public User getUser(int theId) {
+	public Game getGame(int theId) {
 		logger.info("in getUser(): Calling REST API " + restUrl);
 
 		// make REST call
-		User theUser = 
+		Game theGame = 
 				restTemplate.getForObject(restUrl + "/" + theId, 
-										  User.class);
+										  Game.class);
 
-		logger.info("in saveUser(): theUser=" + theUser);
+		logger.info("in saveGame(): theGame=" + theGame);
 		
-		return theUser;
+		return theGame;
 	}
 	
 	@Override
-	public void saveUser(User theUser) {
+	public void saveGame(Game theGame) {
 		
-		logger.info("in saveUser(): Calling REST API " + restUrl);
+		logger.info("in saveGame(): Calling REST API " + restUrl);
 		
-		int userId = theUser.getId();
+		int gameId = theGame.getId();
 
 		// make REST call
-		if (userId == 0) {
-			// add employee
-			restTemplate.postForEntity(restUrl, theUser, String.class);			
+		if (gameId == 0) {
+			// add game
+			restTemplate.postForEntity(restUrl, theGame, String.class);			
 		
 		} else {
-			// update employee
-			restTemplate.put(restUrl, theUser);
+			// update game
+			restTemplate.put(restUrl, theGame);
 		}
 
-		logger.info("in saveUser(): success");	
+		logger.info("in saveGame(): success");	
 
 	}
 
 	@Override
-	public void deleteUser(int theId) {
-		logger.info("in deleteUser(): Calling REST API " + restUrl);
+	public void deleteGame(int theId) {
+		logger.info("in deleteGame(): Calling REST API " + restUrl);
 
 		// make REST call
 		restTemplate.delete(restUrl + "/" + theId);
 
-		logger.info("in deleteUser(): deleted user theId=" + theId);
+		logger.info("in deleteGame(): deleted game theId=" + theId);
 
 	}
 

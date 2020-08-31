@@ -26,7 +26,7 @@ public class GameDAOImpl implements GameDAO {
 		// create a query  ... sort by last name
 		
 		Query<Game> theQuery = 
-				currentSession.createQuery("from game order by popularity DESC",
+				currentSession.createQuery("from Game order by popularity DESC",
 						Game.class);
 		
 		// execute query and get result list
