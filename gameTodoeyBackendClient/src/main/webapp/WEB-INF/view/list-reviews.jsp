@@ -65,7 +65,10 @@
 				</c:forEach>
 						
 			</table>
-				
+			
+			<p>
+				<a href="${pageContext.request.contextPath}/game/list">Back to Game List</a>
+			</p>
 		</div>
 	
 	</div>
