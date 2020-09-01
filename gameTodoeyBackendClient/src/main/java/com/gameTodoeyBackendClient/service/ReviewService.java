@@ -9,8 +9,8 @@ public interface ReviewService {
 	
 	public List<Review> getReviews(int gameId);
 
-	public void saveReview(Review theReview);
-
+	public void saveReview(int gameId, Review theReview);
+	
 	public Review getReview(int theId);
 
 	public void deleteReview(int theId);

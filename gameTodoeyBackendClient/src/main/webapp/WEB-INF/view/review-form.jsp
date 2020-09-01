@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Save Customer</title>
+	<title>Save Review</title>
 
 	<link type="text/css"
 		  rel="stylesheet"
@@ -26,7 +26,7 @@
 	<div id="container">
 		<h3>Save Review</h3>
 	
-		<form:form action="saveReview" modelAttribute="review" method="POST">
+		<form:form action="${pageContext.request.contextPath}/review/saveReview/${gameId}" modelAttribute="review" method="POST">
 
 			<!-- need to associate this data with game id -->
 			<form:hidden path="id" />
@@ -58,7 +58,7 @@
 		<div style="clear; both;"></div>
 		
 		<p>
-			<a href="${pageContext.request.contextPath}/review/list">Back to List</a>
+			<a href="${pageContext.request.contextPath}/review/${gameId}">Back to List</a>
 		</p>
 	
 	</div>

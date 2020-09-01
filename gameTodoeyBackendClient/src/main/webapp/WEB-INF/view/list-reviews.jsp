@@ -30,7 +30,7 @@
 			<!-- put new button: Add Customer -->
 		
 			<input type="button" value="Add Review"
-				   onclick="window.location.href='showFormForAdd'; return false;"
+				   onclick="window.location.href='showFormForAdd/${gameId}'; return false;"
 				   class="add-button"
 			/>
 		

@@ -29,24 +29,24 @@ public class ReviewController {
 		List<Review> theReviews = reviewService.getReviews(gameId);
 
 		theModel.addAttribute("reviews", theReviews);
-
+		theModel.addAttribute("gameId", gameId);
 		return "list-reviews";
 	}
 
-	@GetMapping("/showFormForAdd")
-	public String showFormForAdd(@RequestParam("reviewId") int theId, Model theModel) {
+	@GetMapping("/showFormForAdd/{gameId}")
+	public String showFormForAdd(@PathVariable(value="gameId") int gameId, Model theModel) {
 
 		Review theReview = new Review();
 
 		theModel.addAttribute("review", theReview);
-		theModel.addAttribute("id",theId);
+		theModel.addAttribute("gameId",gameId);
 		return "review-form";
 	}
 
-	@PostMapping("/saveReview")
-	public String saveReview(int gameId, @ModelAttribute("review") Review theReview) {
+	@PostMapping("/saveReview/{gameId}")
+	public String saveReview(@PathVariable(value="gameId") int gameId, @ModelAttribute("review") Review theReview) {
 
-		reviewService.saveReview(theReview);
+		reviewService.saveReview(gameId,theReview);
 
 		return String.format("redirect:/review/%s", gameId);
 	}

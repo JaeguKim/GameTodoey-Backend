@@ -67,22 +67,13 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 	}
 	
 	@Override
-	public void saveReview(Review theReview) {
-		
-		logger.info("in saveReview(): Calling REST API " + reviewUrl);
-		
-		int reviewId = theReview.getId();
+	public void saveReview(int gameId, Review theReview) {
+		String requestUrl = String.format("%s/review/%s", gameUrl,gameId);
+		logger.info("in saveReview(): Calling REST API " + requestUrl);
 
 		// make REST call
-		if (reviewId == 0) {
-			// add review
-			restTemplate.postForEntity(reviewUrl, theReview, String.class);			
-		
-		} else {
-			// update review
-			restTemplate.put(reviewUrl, theReview);
-		}
-
+		// add review
+		restTemplate.postForEntity(requestUrl, theReview, String.class);
 		logger.info("in saveReview(): success");	
 
 	}
