@@ -14,13 +14,15 @@ public class Review {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	int id;
+	private int id;
 	
 	@Column(name="rating")
-	float rating;
+	private float rating;
 	
 	@Column(name="comment")
-	String comment;
+	private String comment;
+	
+	private int gameId;
 	
 	public Review() {
 		
@@ -54,6 +56,14 @@ public class Review {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public int getGameId() {
+		return gameId;
+	}
+
+	public void setGameId(int gameId) {
+		this.gameId = gameId;
 	}
 	
 	

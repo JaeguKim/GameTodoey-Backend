@@ -2,16 +2,16 @@ package com.gameTodoeyBackend.dao;
 
 import java.util.List;
 
-import com.gameTodoeyBackend.entity.Game;
+import com.gameTodoeyBackend.entity.Review;
 
 public interface ReviewDAO {
 
-	public List<Game> getGames();
+	public List<Review> getReviews();
 
-	public void saveGame(Game theGame);
+	public void saveReview(Review theReview);
 
-	public Game getGame(int theId);
+	public Review getReview(int theId);
 
-	public void deleteGame(int theId);
+	public void deleteReview(int theId);
 	
 }
