@@ -46,15 +46,20 @@
 				<!-- loop over and print our customers -->
 				<c:forEach var="tempGame" items="${games}">
 				
-					<!-- construct an "update" link with customer id -->
+					<!-- construct an "update" link with game id -->
 					<c:url var="updateLink" value="/game/showFormForUpdate">
-						<c:param name="gameId" value="${gameUser.id}" />
+						<c:param name="gameId" value="${tempGame.id}" />
 					</c:url>					
 
-					<!-- construct an "delete" link with customer id -->
+					<!-- construct an "delete" link with game id -->
 					<c:url var="deleteLink" value="/game/delete">
 						<c:param name="gameId" value="${tempGame.id}" />
 					</c:url>					
+					
+					<!-- construct an "review" link with game id -->
+					<c:url var="reviewLink" value="/review/${tempGame.id}">
+					</c:url>					
+					
 					
 					<tr>
 						<td> ${tempGame.title} </td>
@@ -65,6 +70,8 @@
 							|
 							<a href="${deleteLink}"
 							   onclick="if (!(confirm('Are you sure you want to delete this game?'))) return false">Delete</a>
+							|
+							<a href="${reviewLink}">Reviews</a>
 						</td>
 						
 					</tr>
