@@ -54,7 +54,7 @@ public class GameRestController {
 	}
 	
 	@PostMapping("/games/review/{gameId}")
-	public Game addReview(@PathVariable(name = "gameId") int gameId, @RequestBody Review theReview) {
+	public String addReview(@PathVariable(name = "gameId") int gameId, @RequestBody Review theReview) {
 		
 		Game theGame = gameService.getGame(gameId);
 		
@@ -62,7 +62,7 @@ public class GameRestController {
 			throw new GameNotFoundException("Game id not found - " + gameId);
 		}
 		gameService.addReview(gameId,theReview);
-		return theGame;
+		return "Successfully added review of game id - "+gameId;
 	}
 	
 	@DeleteMapping("/games/{gameId}")

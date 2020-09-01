@@ -29,7 +29,7 @@ public class Game {
 	@Column(name="popularity")
 	private int popularity;
 	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="game_id")
 	private List<Review> reviews;
 	
