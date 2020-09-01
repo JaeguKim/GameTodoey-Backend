@@ -19,7 +19,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>Review Manager</h2>
+			<h2>Review</h2>
 		</div>
 	</div>
 	
@@ -30,7 +30,7 @@
 			<!-- put new button: Add Customer -->
 		
 			<input type="button" value="Add Review"
-				   onclick="window.location.href='showFormForAdd/${gameId}'; return false;"
+				   onclick="window.location.href='showFormForAdd/${title}/${gameId}'; return false;"
 				   class="add-button"
 			/>
 		
@@ -46,13 +46,8 @@
 				<!-- loop over and print our customers -->
 				<c:forEach var="tempReview" items="${reviews}">
 				
-					<!-- construct an "update" link with customer id -->
-					<c:url var="updateLink" value="/review/showFormForReview">
-						<c:param name="reviewId" value="${tempReview.id}" />
-					</c:url>					
-
 					<!-- construct an "delete" link with customer id -->
-					<c:url var="deleteLink" value="/game/delete">
+					<c:url var="deleteLink" value="/review/delete/${gameId}">
 						<c:param name="reviewId" value="${tempReview.id}" />
 					</c:url>					
 					
@@ -60,9 +55,7 @@
 						<td> ${tempReview.rating} </td>
 						<td> ${tempReview.comment} </td>
 						<td>
-							<!-- display the update link -->
-							<a href="${updateLink}">Update</a>
-							|
+					
 							<a href="${deleteLink}"
 							   onclick="if (!(confirm('Are you sure you want to delete this review?'))) return false">Delete</a>
 						</td>

@@ -61,8 +61,8 @@ public class ReviewController {
 		return "review-form";
 	}
 
-	@GetMapping("/delete")
-	public String deleteReview(int gameId, @RequestParam("reviewId") int theId) {
+	@GetMapping("/delete/{gameId}")
+	public String deleteReview(@PathVariable(value="gameId") int gameId, @RequestParam("reviewId") int theId) {
 
 		// delete the review
 		reviewService.deleteReview(theId);

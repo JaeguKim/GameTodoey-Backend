@@ -67,7 +67,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from review where id=:reviewId");
+				currentSession.createQuery("delete from Review where id=:reviewId");
 		theQuery.setParameter("reviewId", theId);
 		
 		theQuery.executeUpdate();		

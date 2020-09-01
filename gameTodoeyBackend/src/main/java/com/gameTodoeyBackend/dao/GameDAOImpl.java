@@ -91,7 +91,7 @@ public class GameDAOImpl implements GameDAO {
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from game where id=:gameId");
+				currentSession.createQuery("delete from Game where id=:gameId");
 		theQuery.setParameter("gameId", theId);
 		
 		theQuery.executeUpdate();		
