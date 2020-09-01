@@ -38,6 +38,16 @@ public class GameRestController {
 		return theGame;
 	}
 	
+	@GetMapping("/games/review/{gameId}")
+	public List<Review> getReviews(@PathVariable(value="gameId") int gameId) {
+		List<Review> reviews = gameService.getReviews(gameId);
+		if (reviews == null) {
+			throw new GameNotFoundException("Review is not found when gameID - " + gameId);
+		}
+		return reviews;
+	}
+	
+	
 	@PostMapping("/games")
 	public Game addGame(@RequestBody Game theGame) {
 		

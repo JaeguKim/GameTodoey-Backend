@@ -17,27 +17,31 @@ import com.gameTodoeyBackendClient.model.Review;
 public class ReviewServiceRestClientImpl implements ReviewService {
 
 	private RestTemplate restTemplate;
-	private String restUrl;
+	private String reviewUrl;
+	private String gameUrl;
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	@Autowired
 	public ReviewServiceRestClientImpl(RestTemplate theRestTemplate, 
-			@Value("${game.rest.url}") String theUrl) {
+			@Value("${review.rest.url}") String reviewUrl, @Value("${game.rest.url}") String gameUrl) {
 		
 		restTemplate = theRestTemplate;
-		restUrl = theUrl;
+		this.reviewUrl = reviewUrl;
+		this.gameUrl = gameUrl; 
+		logger.info("Loaded property : review.rest.url=" + reviewUrl);
+		logger.info("Loaded property : game.rest.url=" + gameUrl);
 		
-		logger.info("Loaded property : gameTodoey.rest.url=" + restUrl);
 	}
 	
 	@Override
-	public List<Review> getReviews() {
+	public List<Review> getReviews(int gameId) {
 		
-		logger.info("in getReviews(): Calling REST API " + restUrl);
+		String requestUrl = String.format("%s/review/%s", gameUrl,gameId);
+		logger.info("in getReviews(): Calling REST API " + requestUrl);
 
 		// make REST call
 		ResponseEntity<List<Review>> responseEntity = 
-											restTemplate.exchange(restUrl, HttpMethod.GET, null, 
+											restTemplate.exchange(requestUrl, HttpMethod.GET, null, 
 																  new ParameterizedTypeReference<List<Review>>() {});
 
 		// get the list of users from response
@@ -50,14 +54,14 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 
 	@Override
 	public Review getReview(int theId) {
-		logger.info("in getUser(): Calling REST API " + restUrl);
+		logger.info("in getUser(): Calling REST API " + reviewUrl);
 
 		// make REST call
 		Review theReview = 
-				restTemplate.getForObject(restUrl + "/" + theId, 
+				restTemplate.getForObject(reviewUrl + "/" + theId, 
 						Review.class);
 
-		logger.info("in saveReview(): theReview=" + theReview);
+		logger.info("in getReview(): theReview=" + theReview);
 		
 		return theReview;
 	}
@@ -65,18 +69,18 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 	@Override
 	public void saveReview(Review theReview) {
 		
-		logger.info("in saveReview(): Calling REST API " + restUrl);
+		logger.info("in saveReview(): Calling REST API " + reviewUrl);
 		
 		int reviewId = theReview.getId();
 
 		// make REST call
 		if (reviewId == 0) {
 			// add review
-			restTemplate.postForEntity(restUrl, theReview, String.class);			
+			restTemplate.postForEntity(reviewUrl, theReview, String.class);			
 		
 		} else {
 			// update review
-			restTemplate.put(restUrl, theReview);
+			restTemplate.put(reviewUrl, theReview);
 		}
 
 		logger.info("in saveReview(): success");	
@@ -85,10 +89,10 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 
 	@Override
 	public void deleteReview(int theId) {
-		logger.info("in deleteReview(): Calling REST API " + restUrl);
+		logger.info("in deleteReview(): Calling REST API " + reviewUrl);
 
 		// make REST call
-		restTemplate.delete(restUrl + "/" + theId);
+		restTemplate.delete(reviewUrl + "/" + theId);
 
 		logger.info("in deleteReview(): deleted review theId=" + theId);
 

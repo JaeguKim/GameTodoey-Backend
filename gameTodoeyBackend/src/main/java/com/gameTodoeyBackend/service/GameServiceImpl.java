@@ -21,6 +21,12 @@ public class GameServiceImpl implements GameService {
 	public List<Game> getGames() {
 		return gameDAO.getGames();
 	}
+	
+	@Override
+	@Transactional
+	public List<Review> getReviews(int gameId) {
+		return gameDAO.getReviews(gameId);
+	}
 
 	@Override
 	@Transactional
