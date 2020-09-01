@@ -75,9 +75,9 @@
 				</c:forEach>
 						
 			</table>
-				
+			
 		</div>
-	
+		<p><a href="${pageContext.request.contextPath}/">Back To Home</a></p>
 	</div>
 	
 
