@@ -3,6 +3,7 @@ package com.gameTodoeyBackend.service;
 import java.util.List;
 
 import com.gameTodoeyBackend.entity.Game;
+import com.gameTodoeyBackend.entity.Review;
 
 public interface GameService {
 
@@ -14,4 +15,5 @@ public interface GameService {
 
 	public void deleteGame(int theId);
 	
+	public void addReview(int theId, Review theReview);
 }

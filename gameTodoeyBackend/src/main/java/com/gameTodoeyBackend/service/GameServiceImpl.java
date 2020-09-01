@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.gameTodoeyBackend.dao.GameDAO;
 import com.gameTodoeyBackend.entity.Game;
+import com.gameTodoeyBackend.entity.Review;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -40,6 +41,12 @@ public class GameServiceImpl implements GameService {
 	public void deleteGame(int theId) {
 
 		gameDAO.deleteGame(theId);
+	}
+
+	@Override
+	@Transactional
+	public void addReview(int theId, Review theReview) {
+		gameDAO.addReview(theId, theReview);
 	}
 }
 

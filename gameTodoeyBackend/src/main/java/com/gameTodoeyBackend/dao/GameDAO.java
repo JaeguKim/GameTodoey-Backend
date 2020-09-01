@@ -3,6 +3,7 @@ package com.gameTodoeyBackend.dao;
 import java.util.List;
 
 import com.gameTodoeyBackend.entity.Game;
+import com.gameTodoeyBackend.entity.Review;
 
 public interface GameDAO {
 
@@ -12,6 +13,8 @@ public interface GameDAO {
 
 	public Game getGame(int theId);
 
+	public void addReview(int id, Review theReview);
+	
 	public void deleteGame(int theId);
 	
 }

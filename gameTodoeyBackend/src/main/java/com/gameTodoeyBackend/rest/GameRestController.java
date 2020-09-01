@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gameTodoeyBackend.entity.Game;
-import com.gameTodoeyBackend.entity.User;
+import com.gameTodoeyBackend.entity.Review;
 import com.gameTodoeyBackend.service.GameService;
 
 @RestController
@@ -50,6 +50,18 @@ public class GameRestController {
 	public Game updateGame(@RequestBody Game theGame) {
 		
 		gameService.saveGame(theGame);
+		return theGame;
+	}
+	
+	@PostMapping("/games/review/{gameId}")
+	public Game addReview(@PathVariable(name = "gameId") int gameId, @RequestBody Review theReview) {
+		
+		Game theGame = gameService.getGame(gameId);
+		
+		if (theGame == null) {
+			throw new GameNotFoundException("Game id not found - " + gameId);
+		}
+		gameService.addReview(gameId,theReview);
 		return theGame;
 	}
 	

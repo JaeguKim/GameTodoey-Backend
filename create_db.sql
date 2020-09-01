@@ -27,8 +27,8 @@ CREATE TABLE `review` (
   `comment` varchar(256) DEFAULT NULL,
   `game_id` int(11) DEFAULT NULL,
 
-constraint `rating_min` check((`rating` > 0)),
-constraint `rating_max` check((`rating` < 1)),
+constraint `rating_min` check((`rating` >= 0)),
+constraint `rating_max` check((`rating` <= 10)),
 
   PRIMARY KEY (`id`),
 

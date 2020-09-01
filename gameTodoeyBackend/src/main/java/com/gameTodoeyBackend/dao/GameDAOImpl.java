@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gameTodoeyBackend.entity.Game;
+import com.gameTodoeyBackend.entity.Review;
 
 @Repository
 public class GameDAOImpl implements GameDAO {
@@ -60,6 +61,19 @@ public class GameDAOImpl implements GameDAO {
 	}
 
 	@Override
+	public void addReview(int theId, Review theReview) {
+
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// now retrieve/read from database using the primary key
+		Game theGame = currentSession.get(Game.class, theId);
+		
+		theGame.addReview(theReview);
+		
+	}
+	
+	@Override
 	public void deleteGame(int theId) {
 
 		// get the current hibernate session
@@ -72,7 +86,8 @@ public class GameDAOImpl implements GameDAO {
 		
 		theQuery.executeUpdate();		
 	}
-
+	
+	
 }
 
 

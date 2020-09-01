@@ -22,8 +22,7 @@ public class Review {
 	@Column(name="comment")
 	private String comment;
 	
-	private int gameId;
-	
+
 	public Review() {
 		
 	}
@@ -58,13 +57,5 @@ public class Review {
 		this.comment = comment;
 	}
 
-	public int getGameId() {
-		return gameId;
-	}
-
-	public void setGameId(int gameId) {
-		this.gameId = gameId;
-	}
-	
 	
 }
