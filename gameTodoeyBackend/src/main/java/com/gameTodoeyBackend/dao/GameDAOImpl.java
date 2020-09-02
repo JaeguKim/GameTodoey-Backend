@@ -80,11 +80,11 @@ public class GameDAOImpl implements GameDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// delete object with primary key
-		Query theQuery = 
-				currentSession.createQuery("delete from Game where id=:gameId");
-		theQuery.setParameter("gameId", theId);
+		Game theGame = currentSession.load(Game.class, theId);
 		
-		theQuery.executeUpdate();		
+		if (theGame != null) 
+			currentSession.delete(theGame);
+		
 	}
 
 
