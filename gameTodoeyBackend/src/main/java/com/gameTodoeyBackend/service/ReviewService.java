@@ -13,7 +13,7 @@ public interface ReviewService {
 	
 	public Review getReview(int theId);
 	
-	public List<Review> getReviews(int gameId);
+	public List<Review> getReviewsOfGameId(int gameId);
 	
 	public void deleteReview(int theId);
 	

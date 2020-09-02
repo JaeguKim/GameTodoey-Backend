@@ -58,7 +58,7 @@
 					</c:url>					
 					
 					<!-- construct an "delete" link with customer id -->
-					<c:url var="gamesOfUSerLink" value="/user/game/${tempUser.id}"></c:url>
+					<c:url var="gamesLink" value="/user/game/${tempUser.id}"></c:url>
 					
 					<tr>
 						<td> ${tempUser.firstName} </td>
@@ -72,7 +72,7 @@
 							<a href="${deleteLink}"
 							   onclick="if (!(confirm('Are you sure you want to delete this user?'))) return false">Delete</a>
 							|
-							<a href="${gamesOfUserLink}">Games</a>
+							<a href="${gamesLink}">Games</a>
 						</td>
 						
 					</tr>

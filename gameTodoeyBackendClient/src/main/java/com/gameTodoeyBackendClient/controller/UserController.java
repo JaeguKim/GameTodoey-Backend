@@ -38,7 +38,7 @@ public class UserController {
 		
 		List<Game> theGames = userService.getGamesOfUser(userId);
 		theModel.addAttribute("games",theGames);
-		return "game-of-user-form";
+		return "list-games";
 	}
 	
 	@GetMapping("/showFormForAdd")

@@ -8,7 +8,7 @@ public interface ReviewDAO {
 
 	public List<Review> getReviews();
 	
-	public List<Review> getReviews(int gamdId);
+	public List<Review> getReviewsOfGameId(int gamdId);
 	
 	public void saveReview(Review theReview);
 

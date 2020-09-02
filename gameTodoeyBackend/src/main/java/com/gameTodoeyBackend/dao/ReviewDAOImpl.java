@@ -38,7 +38,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 	}
 	
 	@Override
-	public List<Review> getReviews(int gameId) {
+	public List<Review> getReviewsOfGameId(int gameId) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		

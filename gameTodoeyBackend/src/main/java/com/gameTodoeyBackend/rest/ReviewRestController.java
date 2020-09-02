@@ -28,25 +28,8 @@ public class ReviewRestController {
 		return reviewService.getReviews();
 	}
 	
-	@GetMapping("/reviews/{gameId}")
-	public List<Review> getReviews(@PathVariable(value="gameId") int gameId) {
-		List<Review> reviews = reviewService.getReviews(gameId);
-		if (reviews == null) {
-			throw new GameNotFoundException("Review is not found when gameID - " + gameId);
-		}
-		return reviews;
-	}
-	
-	@PostMapping("/reviews/")
-	public Review saveReview(@RequestBody Review theReview) {
-		
-		theReview.setId(0);
-		reviewService.saveReview(theReview);
-		return theReview;
-	}
-	
 	@GetMapping("/reviews/{reviewId}")
-	public Review getReviewId(@PathVariable(value = "reviewId") int reviewId) {
+	public Review getReview(@PathVariable(value = "reviewId") int reviewId) {
 		Review theReview = reviewService.getReview(reviewId);
 		
 		if (theReview == null) {
@@ -54,6 +37,24 @@ public class ReviewRestController {
 		}
 		return theReview;
 	}
+	
+	@GetMapping("/reviews/games/{gameId}")
+	public List<Review> getReviewsOfGameId(@PathVariable(value="gameId") int gameId) {
+		List<Review> reviews = reviewService.getReviewsOfGameId(gameId);
+		if (reviews == null) {
+			throw new GameNotFoundException("Review is not found when gameID - " + gameId);
+		}
+		return reviews;
+	}
+	
+	@PostMapping("/reviews")
+	public Review saveReview(@RequestBody Review theReview) {
+		
+		theReview.setId(0);
+		reviewService.saveReview(theReview);
+		return theReview;
+	}
+
 
 	@PutMapping("/reviews")
 	public Review updateReview(@RequestBody Review theReview) {
