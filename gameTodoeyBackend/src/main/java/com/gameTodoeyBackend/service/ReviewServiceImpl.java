@@ -21,6 +21,12 @@ public class ReviewServiceImpl implements ReviewService {
 	public List<Review> getReviews() {
 		return reviewDAO.getReviews();
 	}
+		
+	@Override
+	@Transactional
+	public List<Review> getReviews(int gameId) {
+		return reviewDAO.getReviews(gameId);
+	}
 
 	@Override
 	@Transactional

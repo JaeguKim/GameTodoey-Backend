@@ -38,16 +38,6 @@ public class GameRestController {
 		return theGame;
 	}
 	
-	@GetMapping("/games/review/{gameId}")
-	public List<Review> getReviews(@PathVariable(value="gameId") int gameId) {
-		List<Review> reviews = gameService.getReviews(gameId);
-		if (reviews == null) {
-			throw new GameNotFoundException("Review is not found when gameID - " + gameId);
-		}
-		return reviews;
-	}
-	
-	
 	@PostMapping("/games")
 	public Game addGame(@RequestBody Game theGame) {
 		
@@ -62,19 +52,7 @@ public class GameRestController {
 		gameService.saveGame(theGame);
 		return theGame;
 	}
-	
-	@PostMapping("/games/review/{gameId}")
-	public String addReview(@PathVariable(name = "gameId") int gameId, @RequestBody Review theReview) {
-		
-		Game theGame = gameService.getGame(gameId);
-		
-		if (theGame == null) {
-			throw new GameNotFoundException("Game id not found - " + gameId);
-		}
-		gameService.addReview(gameId,theReview);
-		return "Successfully added review of game id - "+gameId;
-	}
-	
+
 	@DeleteMapping("/games/{gameId}")
 	public String deleteGame(@PathVariable(name = "gameId") int gameId) {
 		

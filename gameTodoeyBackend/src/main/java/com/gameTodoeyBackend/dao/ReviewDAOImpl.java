@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.gameTodoeyBackend.entity.Game;
 import com.gameTodoeyBackend.entity.Review;
 
 @Repository
@@ -35,7 +36,16 @@ public class ReviewDAOImpl implements ReviewDAO {
 		// return the results		
 		return reviews;
 	}
-
+	
+	@Override
+	public List<Review> getReviews(int gameId) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Game theGame = currentSession.get(Game.class, gameId);
+		return theGame.getReviews();
+	}
+	
 	@Override
 	public void saveReview(Review theReview) {
 

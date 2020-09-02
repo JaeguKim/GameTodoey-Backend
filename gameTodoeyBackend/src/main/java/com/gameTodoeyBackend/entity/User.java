@@ -14,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="user")
 public class User {
@@ -48,10 +50,11 @@ public class User {
 	@Column(name="email")
 	private String email;
 	
-	@ManyToMany(fetch=FetchType.LAZY, 
-			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@ManyToMany(fetch=FetchType.EAGER, 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinTable(name="game_user",joinColumns=@JoinColumn(name="user_id"),
 	inverseJoinColumns=@JoinColumn(name="game_id"))
+	@JsonIgnore
 	private List<Game> games;
 	
 	public User() {

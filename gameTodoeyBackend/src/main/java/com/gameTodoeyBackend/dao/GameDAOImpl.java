@@ -32,21 +32,12 @@ public class GameDAOImpl implements GameDAO {
 		
 		// execute query and get result list
 		List<Game> games = theQuery.getResultList();
-				
+		System.out.println("TEST.........");
+		System.out.println(games);
 		// return the results		
 		return games;
 	}
-	
-	@Override
-	public List<Review> getReviews(int gameId) {
-		
-		Session currentSession = sessionFactory.getCurrentSession();
-		
-		Game theGame = currentSession.get(Game.class, gameId);
-		return theGame.getReviews();
-	}
-	
-	
+
 	@Override
 	public void saveGame(Game theGame) {
 

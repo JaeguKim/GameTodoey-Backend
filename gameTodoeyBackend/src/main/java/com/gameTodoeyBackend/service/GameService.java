@@ -13,9 +13,7 @@ public interface GameService {
 	
 	public Game getGame(int theId);
 
-	public List<Review> getReviews(int gameId);
-	
 	public void deleteGame(int theId);
 	
-	public void addReview(int theId, Review theReview);
+	
 }

@@ -16,6 +16,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="game")
 public class Game {
@@ -31,14 +33,16 @@ public class Game {
 	@Column(name="popularity")
 	private int popularity;
 	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="game_id")
+	@JsonIgnore
 	private List<Review> reviews;
 	
 	@ManyToMany(fetch=FetchType.LAZY, 
-			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinTable(name="game_user",joinColumns=@JoinColumn(name="game_id"),
 	inverseJoinColumns=@JoinColumn(name="user_id"))
+	@JsonIgnore
 	private List<User> users;
 	
 	public Game() {

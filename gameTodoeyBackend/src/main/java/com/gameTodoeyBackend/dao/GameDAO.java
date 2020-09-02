@@ -9,8 +9,6 @@ public interface GameDAO {
 
 	public List<Game> getGames();
 
-	public List<Review> getReviews(int gamdId);
-	
 	public void saveGame(Game theGame);
 
 	public Game getGame(int theId);

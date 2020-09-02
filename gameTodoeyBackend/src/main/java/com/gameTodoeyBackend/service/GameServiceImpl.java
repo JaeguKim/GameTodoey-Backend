@@ -21,12 +21,6 @@ public class GameServiceImpl implements GameService {
 	public List<Game> getGames() {
 		return gameDAO.getGames();
 	}
-	
-	@Override
-	@Transactional
-	public List<Review> getReviews(int gameId) {
-		return gameDAO.getReviews(gameId);
-	}
 
 	@Override
 	@Transactional
@@ -49,11 +43,6 @@ public class GameServiceImpl implements GameService {
 		gameDAO.deleteGame(theId);
 	}
 
-	@Override
-	@Transactional
-	public void addReview(int theId, Review theReview) {
-		gameDAO.addReview(theId, theReview);
-	}
 }
 
 
