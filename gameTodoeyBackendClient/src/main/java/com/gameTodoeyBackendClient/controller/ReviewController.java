@@ -26,7 +26,7 @@ public class ReviewController {
 	@GetMapping("/{gameId}")
 	public String showReviews(@PathVariable(value = "gameId") int gameId, Model theModel) {
 
-		List<Review> theReviews = reviewService.getReviews(gameId);
+		List<Review> theReviews = reviewService.getReviewsOfGameId(gameId);
 
 		theModel.addAttribute("reviews", theReviews);
 		theModel.addAttribute("gameId", gameId);
@@ -43,12 +43,12 @@ public class ReviewController {
 		return "review-form";
 	}
 
-	@PostMapping("/saveReview/{gameId}")
-	public String saveReview(@PathVariable(value="gameId") int gameId, @ModelAttribute("review") Review theReview) {
+	@PostMapping("/saveReview")
+	public String saveReview(@ModelAttribute("review") Review theReview) {
+		
+		reviewService.saveReview(theReview);
 
-		reviewService.saveReview(gameId,theReview);
-
-		return String.format("redirect:/review/%s", gameId);
+		return String.format("redirect:/review/%s", theReview.getGameId());
 	}
 
 	@GetMapping("/showFormForUpdate")

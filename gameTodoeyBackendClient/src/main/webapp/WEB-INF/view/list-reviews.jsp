@@ -27,10 +27,10 @@
 	
 		<div id="content">
 		
-			<!-- put new button: Add Customer -->
+			<!-- put new button: Add Review -->
 		
 			<input type="button" value="Add Review"
-				   onclick="window.location.href='showFormForAdd/${title}/${gameId}'; return false;"
+				   onclick="window.location.href='showFormForAdd/${gameId}'; return false;"
 				   class="add-button"
 			/>
 		

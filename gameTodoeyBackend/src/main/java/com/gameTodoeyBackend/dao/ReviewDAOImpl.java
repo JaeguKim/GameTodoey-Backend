@@ -42,8 +42,11 @@ public class ReviewDAOImpl implements ReviewDAO {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		Game theGame = currentSession.get(Game.class, gameId);
-		return theGame.getReviews();
+		Query<Review> theQuery = currentSession.createQuery("from Review where game_id=:gameId",Review.class);
+		theQuery.setParameter("gameId", gameId);
+		
+		List<Review> reviews = theQuery.getResultList();
+		return reviews;
 	}
 	
 	@Override

@@ -18,7 +18,6 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 
 	private RestTemplate restTemplate;
 	private String reviewUrl;
-	private String gameUrl;
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	@Autowired
@@ -27,16 +26,15 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 		
 		restTemplate = theRestTemplate;
 		this.reviewUrl = reviewUrl;
-		this.gameUrl = gameUrl; 
 		logger.info("Loaded property : review.rest.url=" + reviewUrl);
 		logger.info("Loaded property : game.rest.url=" + gameUrl);
 		
 	}
 	
 	@Override
-	public List<Review> getReviews(int gameId) {
+	public List<Review> getReviewsOfGameId(int gameId) {
 		
-		String requestUrl = String.format("%s/review/%s", gameUrl,gameId);
+		String requestUrl = String.format("%s/games/%s", reviewUrl,gameId);
 		logger.info("in getReviews(): Calling REST API " + requestUrl);
 
 		// make REST call
@@ -67,13 +65,13 @@ public class ReviewServiceRestClientImpl implements ReviewService {
 	}
 	
 	@Override
-	public void saveReview(int gameId, Review theReview) {
-		String requestUrl = String.format("%s/review/%s", gameUrl,gameId);
-		logger.info("in saveReview(): Calling REST API " + requestUrl);
+	public void saveReview(Review theReview) {
+
+		logger.info("in saveReview(): Calling REST API " + reviewUrl);
 
 		// make REST call
 		// add review
-		restTemplate.postForEntity(requestUrl, theReview, String.class);
+		restTemplate.postForEntity(reviewUrl, theReview, String.class);
 		logger.info("in saveReview(): success");	
 
 	}

@@ -26,11 +26,11 @@
 	<div id="container">
 		<h3>Save Review</h3>
 	
-		<form:form action="${pageContext.request.contextPath}/review/saveReview/${gameId}" modelAttribute="review" method="POST">
+		<form:form action="${pageContext.request.contextPath}/review/saveReview" modelAttribute="review" method="POST">
 
 			<!-- need to associate this data with game id -->
 			<form:hidden path="id" />
-					
+			<input type="hidden" name="gameId" value="${gameId}">
 			<table>
 				<tbody>
 					<tr>

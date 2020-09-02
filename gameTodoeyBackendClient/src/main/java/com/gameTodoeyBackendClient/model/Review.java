@@ -5,6 +5,7 @@ public class Review {
 	private int id;
 	private float rating;
 	private String comment;
+	private int gameId;
 	
 	public Review() {
 		
@@ -32,6 +33,14 @@ public class Review {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public int getGameId() {
+		return gameId;
+	}
+
+	public void setGameId(int gameId) {
+		this.gameId = gameId;
 	}
 
 }

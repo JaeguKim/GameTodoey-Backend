@@ -32,8 +32,7 @@ public class GameDAOImpl implements GameDAO {
 		
 		// execute query and get result list
 		List<Game> games = theQuery.getResultList();
-		System.out.println("TEST.........");
-		System.out.println(games);
+
 		// return the results		
 		return games;
 	}

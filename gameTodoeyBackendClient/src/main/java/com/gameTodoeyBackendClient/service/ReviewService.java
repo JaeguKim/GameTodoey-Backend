@@ -7,11 +7,11 @@ import com.gameTodoeyBackendClient.model.Review;
 
 public interface ReviewService {
 	
-	public List<Review> getReviews(int gameId);
-
-	public void saveReview(int gameId, Review theReview);
-	
 	public Review getReview(int theId);
-
+	
+	public List<Review> getReviewsOfGameId(int gameId);
+	
+	public void saveReview(Review theReview);
+	
 	public void deleteReview(int theId);
 }
