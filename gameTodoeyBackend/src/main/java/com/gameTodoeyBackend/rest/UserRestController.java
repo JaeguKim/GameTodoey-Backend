@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gameTodoeyBackend.entity.Game;
 import com.gameTodoeyBackend.entity.User;
 import com.gameTodoeyBackend.service.UserService;
 
@@ -35,6 +36,16 @@ public class UserRestController {
 			throw new UserNotFoundException("User id not found - " + userId);
 		}
 		return theUser;
+	}
+	
+	@GetMapping("/users/games/{userId}")
+	public List<Game> getGamesOfUsers(@PathVariable(value = "userId") int userId) {
+		List<Game> theGames = userService.getGamesOfUser(userId);
+		
+		if (theGames == null) {
+			throw new UserNotFoundException("User id not found - " + userId);
+		}
+		return theGames;
 	}
 	
 	@PostMapping("/users")

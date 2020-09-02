@@ -1,10 +1,17 @@
 package com.gameTodoeyBackend.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -40,6 +47,12 @@ public class User {
 	
 	@Column(name="email")
 	private String email;
+	
+	@ManyToMany(fetch=FetchType.LAZY, 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinTable(name="game_user",joinColumns=@JoinColumn(name="user_id"),
+	inverseJoinColumns=@JoinColumn(name="game_id"))
+	private List<Game> games;
 	
 	public User() {
 		
@@ -77,8 +90,17 @@ public class User {
 		this.email = email;
 	}
 
+	public List<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(List<Game> games) {
+		this.games = games;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
+
 }

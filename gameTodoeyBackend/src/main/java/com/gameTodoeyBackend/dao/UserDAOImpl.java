@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.gameTodoeyBackend.entity.Game;
 import com.gameTodoeyBackend.entity.User;
 
 @Repository
@@ -35,6 +36,16 @@ public class UserDAOImpl implements UserDAO {
 		return users;
 	}
 
+	@Override
+	public List<Game> getGamesOfUser(int theId) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		User theUser = currentSession.get(User.class,theId);
+		
+		return theUser.getGames();
+	}
+	
 	@Override
 	public void saveUser(User theUser) {
 
@@ -71,6 +82,8 @@ public class UserDAOImpl implements UserDAO {
 		
 		theQuery.executeUpdate();		
 	}
+
+
 
 }
 

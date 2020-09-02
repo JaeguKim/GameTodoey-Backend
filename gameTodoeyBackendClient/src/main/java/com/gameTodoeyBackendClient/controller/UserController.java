@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.gameTodoeyBackendClient.model.Game;
 import com.gameTodoeyBackendClient.model.User;
 import com.gameTodoeyBackendClient.service.UserService;
 
@@ -29,6 +31,14 @@ public class UserController {
 		theModel.addAttribute("users",theUsers);
 		
 		return "list-users";
+	}
+	
+	@GetMapping("/game/{userId}")
+	public String listGamesOfUser(@PathVariable(name="userId") int userId, Model theModel) {
+		
+		List<Game> theGames = userService.getGamesOfUser(userId);
+		theModel.addAttribute("games",theGames);
+		return "game-of-user-form";
 	}
 	
 	@GetMapping("/showFormForAdd")

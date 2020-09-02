@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gameTodoeyBackend.dao.UserDAO;
+import com.gameTodoeyBackend.entity.Game;
 import com.gameTodoeyBackend.entity.User;
 
 @Service
@@ -20,7 +21,13 @@ public class UserServiceImpl implements UserService {
 	public List<User> getUsers() {
 		return userDAO.getUsers();
 	}
-
+	
+	@Override
+	@Transactional
+	public List<Game> getGamesOfUser(int userId) {
+		return userDAO.getGamesOfUser(userId);
+	}
+	
 	@Override
 	@Transactional
 	public void saveUser(User theUser) {
@@ -41,6 +48,8 @@ public class UserServiceImpl implements UserService {
 
 		userDAO.deleteUser(theId);
 	}
+
+
 }
 
 

@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,6 +34,12 @@ public class Game {
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="game_id")
 	private List<Review> reviews;
+	
+	@ManyToMany(fetch=FetchType.LAZY, 
+			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+	@JoinTable(name="game_user",joinColumns=@JoinColumn(name="game_id"),
+	inverseJoinColumns=@JoinColumn(name="user_id"))
+	private List<User> users;
 	
 	public Game() {
 		
@@ -77,6 +85,23 @@ public class Game {
 		reviews.add(theReview);
 	}
 	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	public void addUser(User user) { 
+		
+		if (users == null) {
+			users = new ArrayList<>();
+		}
+		
+		users.add(user);
+	}
+
 	@Override
 	public String toString() {
 		return "Game [id=" + id + ", title=" + title + ", popularity=" + popularity + "]";

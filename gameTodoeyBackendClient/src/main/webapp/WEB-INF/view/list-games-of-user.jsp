@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>List Users</title>
+	<title>List Games Of User</title>
 	
 	<!-- reference our style sheet -->
 
@@ -19,7 +19,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>User Manager</h2>
+			<h2>User's Game Manager</h2>
 		</div>
 	</div>
 	
@@ -29,7 +29,7 @@
 		
 			<!-- put new button: Add Customer -->
 		
-			<input type="button" value="Add User"
+			<input type="button" value="Add Game"
 				   onclick="window.location.href='showFormForAdd'; return false;"
 				   class="add-button"
 			/>
@@ -38,41 +38,40 @@
 		
 			<table>
 				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
+					<th>title</th>
+					<th>popularity</th>
 					<th>Action</th>
 				</tr>
 				
 				<!-- loop over and print our customers -->
-				<c:forEach var="tempUser" items="${users}">
+				<c:forEach var="tempGame" items="${games}">
 				
-					<!-- construct an "update" link with customer id -->
-					<c:url var="updateLink" value="/user/showFormForUpdate">
-						<c:param name="userId" value="${tempUser.id}" />
+					<!-- construct an "update" link with game id -->
+					<c:url var="updateLink" value="/game/showFormForUpdate">
+						<c:param name="gameId" value="${tempGame.id}" />
 					</c:url>					
 
-					<!-- construct an "delete" link with customer id -->
-					<c:url var="deleteLink" value="/user/delete">
-						<c:param name="userId" value="${tempUser.id}" />
+					<!-- construct an "delete" link with game id -->
+					<c:url var="deleteLink" value="/game/delete">
+						<c:param name="gameId" value="${tempGame.id}" />
 					</c:url>					
 					
-					<!-- construct an "delete" link with customer id -->
-					<c:url var="gamesOfUSerLink" value="/user/game/${tempUser.id}"></c:url>
+					<!-- construct an "review" link with game id -->
+					<c:url var="reviewLink" value="/review/${tempGame.id}">
+					</c:url>					
+					
 					
 					<tr>
-						<td> ${tempUser.firstName} </td>
-						<td> ${tempUser.lastName} </td>
-						<td> ${tempUser.email} </td>
-						
+						<td> ${tempGame.title} </td>
+						<td> ${tempGame.popularity} </td>
 						<td>
 							<!-- display the update link -->
 							<a href="${updateLink}">Update</a>
 							|
 							<a href="${deleteLink}"
-							   onclick="if (!(confirm('Are you sure you want to delete this user?'))) return false">Delete</a>
+							   onclick="if (!(confirm('Are you sure you want to delete this game?'))) return false">Delete</a>
 							|
-							<a href="${gamesOfUserLink}">Games</a>
+							<a href="${reviewLink}">Reviews</a>
 						</td>
 						
 					</tr>
@@ -80,7 +79,7 @@
 				</c:forEach>
 						
 			</table>
-			
+				
 		</div>
 		<p><a href="${pageContext.request.contextPath}/">Back To Home</a></p>
 	</div>

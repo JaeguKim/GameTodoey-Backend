@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.gameTodoeyBackendClient.model.Game;
 import com.gameTodoeyBackendClient.model.User;
 
 @Service
@@ -48,6 +49,26 @@ public class UserServiceRestClientImpl implements UserService {
 		return users;
 	}
 
+	@Override
+	public List<Game> getGamesOfUser(int theId) {
+		
+		String requestUrl = String.format("%s/games/%s", restUrl,theId);
+		logger.info("in getGamesOfUser(): Calling REST API " + requestUrl);
+
+		// make REST call
+		ResponseEntity<List<Game>> responseEntity = 
+											restTemplate.exchange(requestUrl, HttpMethod.GET, null, 
+																  new ParameterizedTypeReference<List<Game>>() {});
+
+		// get the list of users from response
+		List<Game> games = responseEntity.getBody();
+
+		logger.info("in getGamesOfUser(): games" + games);
+		
+		return games;
+
+	}
+	
 	@Override
 	public User getUser(int theId) {
 		logger.info("in getUser(): Calling REST API " + restUrl);
@@ -93,5 +114,7 @@ public class UserServiceRestClientImpl implements UserService {
 		logger.info("in deleteUser(): deleted user theId=" + theId);
 
 	}
+
+
 
 }
