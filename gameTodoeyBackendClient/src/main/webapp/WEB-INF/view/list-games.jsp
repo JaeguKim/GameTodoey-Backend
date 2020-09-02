@@ -27,10 +27,9 @@
 	
 		<div id="content">
 		
-			<!-- put new button: Add Customer -->
-		
+			<!-- put new button: Add Game -->
 			<input type="button" value="Add Game"
-				   onclick="window.location.href='showFormForAdd'; return false;"
+				   onclick="window.location.href='${pageContext.request.contextPath}/game/showFormForAdd/${userId}'; return false;"
 				   class="add-button"
 			/>
 		

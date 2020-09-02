@@ -34,7 +34,13 @@ public class UserServiceImpl implements UserService {
 
 		userDAO.saveUser(theUser);
 	}
-
+	
+	@Override
+	public void addGame(int userId, Game theGame) {
+		
+		userDAO.addGame(userId,theGame);
+	}
+	
 	@Override
 	@Transactional
 	public User getUser(int theId) {
@@ -48,6 +54,8 @@ public class UserServiceImpl implements UserService {
 
 		userDAO.deleteUser(theId);
 	}
+
+
 
 
 }

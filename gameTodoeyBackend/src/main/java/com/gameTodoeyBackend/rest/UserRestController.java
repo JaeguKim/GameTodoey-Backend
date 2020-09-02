@@ -56,6 +56,13 @@ public class UserRestController {
 		return theUser;
 	}
 	
+	@PostMapping("/users/games/{userId}")
+	public Game addGameToUser(@PathVariable(value="userId") int userId, @RequestBody Game theGame) {
+		
+		userService.addGame(userId,theGame);
+		return theGame;
+	}
+	
 	@PutMapping("/users")
 	public User updateUser(@RequestBody User theUser) {
 		

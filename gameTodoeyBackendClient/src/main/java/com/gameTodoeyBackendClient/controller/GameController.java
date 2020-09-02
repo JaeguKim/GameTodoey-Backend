@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gameTodoeyBackendClient.model.Game;
-import com.gameTodoeyBackendClient.model.Review;
-import com.gameTodoeyBackendClient.model.User;
 import com.gameTodoeyBackendClient.service.GameService;
 
 @Controller
@@ -30,23 +28,23 @@ public class GameController {
 		List<Game> theGames = gameService.getGames();
 		
 		theModel.addAttribute("games",theGames);
-		
+		theModel.addAttribute("userId",0);
 		return "list-games";
 	}
 	
-	@GetMapping("/showFormForAdd")
-	public String showFormForAdd(Model theModel) {
+	@GetMapping("/showFormForAdd/{userId}")
+	public String showFormForAdd(@PathVariable(name="userId") int userId, Model theModel) {
 		
 		Game theGame = new Game();
 		
 		theModel.addAttribute("game",theGame);
-		
+		theModel.addAttribute("userId",userId);
 		return "game-form";
 	}
 	
 	@PostMapping("/saveGame")
 	public String saveGame(@ModelAttribute("game") Game theGame) {
-		
+
 		gameService.saveGame(theGame);
 		
 		return "redirect:/game/list";

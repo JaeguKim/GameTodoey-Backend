@@ -103,7 +103,18 @@ public class UserServiceRestClientImpl implements UserService {
 		logger.info("in saveUser(): success");	
 
 	}
+	
+	@Override
+	public void addGame(int userId, Game theGame) {
+		
+		String requestUrl = String.format("%s/games/%s", restUrl,userId);
+		logger.info("in addGame(): Calling REST API " + requestUrl);
 
+		restTemplate.postForEntity(requestUrl, theGame, String.class);	
+
+		logger.info("in addGame(): success");	
+	}
+	
 	@Override
 	public void deleteUser(int theId) {
 		logger.info("in deleteUser(): Calling REST API " + restUrl);
@@ -114,6 +125,8 @@ public class UserServiceRestClientImpl implements UserService {
 		logger.info("in deleteUser(): deleted user theId=" + theId);
 
 	}
+
+	
 
 
 

@@ -1,5 +1,6 @@
 package com.gameTodoeyBackend.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -99,6 +100,14 @@ public class User {
 
 	public void setGames(List<Game> games) {
 		this.games = games;
+	}
+	
+	public void addGame(Game theGame) {
+		
+		if (games == null) {
+			games = new ArrayList<>();
+		}
+		games.add(theGame);
 	}
 	
 	@Override

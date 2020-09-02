@@ -56,6 +56,14 @@ public class UserDAOImpl implements UserDAO {
 		currentSession.saveOrUpdate(theUser);
 		
 	}
+	
+	@Override
+	public void addGame(int userId, Game theGame) {
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		User theUser = currentSession.get(User.class, userId);
+		theUser.addGame(theGame);
+	}
 
 	@Override
 	public User getUser(int theId) {
@@ -82,6 +90,7 @@ public class UserDAOImpl implements UserDAO {
 		
 		theQuery.executeUpdate();		
 	}
+
 
 
 

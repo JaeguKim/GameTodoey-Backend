@@ -38,6 +38,7 @@ public class UserController {
 		
 		List<Game> theGames = userService.getGamesOfUser(userId);
 		theModel.addAttribute("games",theGames);
+		theModel.addAttribute("userId",userId);
 		return "list-games";
 	}
 	
@@ -57,6 +58,13 @@ public class UserController {
 		userService.saveUser(theUser);
 		
 		return "redirect:/user/list";
+	}
+	
+	@PostMapping("/addGame/{userId}")
+	public Game addGame(@PathVariable(value="userId") int userId, @ModelAttribute("game") Game theGame) {
+		
+		userService.addGame(userId,theGame);
+		return theGame;
 	}
 	
 	@GetMapping("/showFormForUpdate")

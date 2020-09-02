@@ -12,7 +12,9 @@ public interface UserDAO {
 	public List<Game> getGamesOfUser(int theId);
 	
 	public void saveUser(User theUser);
-
+	
+	public void addGame(int userId, Game theGame);
+	
 	public User getUser(int theId);
 
 	public void deleteUser(int theId);
