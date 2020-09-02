@@ -6420,3 +6420,12 @@ java.lang.IllegalArgumentException
 
 !ENTRY org.eclipse.wst.html.ui 1 1 2020-09-02 18:37:50.060
 !MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-02 19:37:59.457
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-02 19:37:59.459
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-02 19:37:59.460
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT

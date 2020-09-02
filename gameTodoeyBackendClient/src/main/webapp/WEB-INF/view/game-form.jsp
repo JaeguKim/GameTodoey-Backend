@@ -29,10 +29,10 @@
 
 		<c:choose>
 			<c:when test="${userId == 0}">
-   				<c:url var="saveGameLink" value="${pageContext.request.contextPath}/game/saveGame"></c:url>
+   				<c:url var="saveGameLink" value="/game/saveGame"></c:url>
 			</c:when>
 			<c:otherwise>	
- 				<c:url var="saveGameLink" value="${pageContext.request.contextPath}/user/addGame/${userId}"></c:url>
+ 				<c:url var="saveGameLink" value="/user/addGame/${userId}"></c:url>
 			</c:otherwise>
 		</c:choose>
 		

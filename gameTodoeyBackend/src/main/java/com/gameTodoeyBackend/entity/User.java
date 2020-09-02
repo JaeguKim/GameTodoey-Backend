@@ -52,7 +52,7 @@ public class User {
 	private String email;
 	
 	@ManyToMany(fetch=FetchType.EAGER, 
-			cascade= {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+			cascade= {CascadeType.ALL})
 	@JoinTable(name="game_user",joinColumns=@JoinColumn(name="user_id"),
 	inverseJoinColumns=@JoinColumn(name="game_id"))
 	@JsonIgnore

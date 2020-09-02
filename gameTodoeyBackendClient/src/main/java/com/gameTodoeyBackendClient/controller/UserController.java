@@ -2,6 +2,8 @@ package com.gameTodoeyBackendClient.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,10 +63,11 @@ public class UserController {
 	}
 	
 	@PostMapping("/addGame/{userId}")
-	public Game addGame(@PathVariable(value="userId") int userId, @ModelAttribute("game") Game theGame) {
+	public String addGame(@PathVariable(value="userId") int userId, 
+			@ModelAttribute("game") Game theGame) {
 		
 		userService.addGame(userId,theGame);
-		return theGame;
+		return String.format("redirect:/user/game/%s",userId);
 	}
 	
 	@GetMapping("/showFormForUpdate")
