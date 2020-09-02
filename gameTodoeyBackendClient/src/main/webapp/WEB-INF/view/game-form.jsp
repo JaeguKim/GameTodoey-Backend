@@ -28,7 +28,7 @@
 		<h3>Save Game</h3>
 
 		<c:choose>
-			<c:when check="${param.${userId}=='1'}">
+			<c:when test="${userId == 0}">
    				<c:url var="saveGameLink" value="${pageContext.request.contextPath}/game/saveGame"></c:url>
 			</c:when>
 			<c:otherwise>	
@@ -36,7 +36,7 @@
 			</c:otherwise>
 		</c:choose>
 		
-		<form:form action="${saveGameLink" modelAttribute="game" method="POST">
+		<form:form action="${saveGameLink}" modelAttribute="game" method="POST">
 
 			<!-- need to associate this data with game id -->
 			<form:hidden path="id" />
