@@ -35,9 +35,14 @@ public class GameController {
 	@GetMapping("/showFormForAdd/{userId}")
 	public String showFormForAdd(@PathVariable(name="userId") int userId, Model theModel) {
 		
-		Game theGame = new Game();
-		
-		theModel.addAttribute("game",theGame);
+		if (userId == 0) {
+			Game theGame = new Game();
+			theModel.addAttribute("game",theGame);
+		}
+		else {
+			List<Game> games = gameService.getGames();
+			theModel.addAttribute("games",games);
+		}
 		theModel.addAttribute("userId",userId);
 		return "game-form";
 	}

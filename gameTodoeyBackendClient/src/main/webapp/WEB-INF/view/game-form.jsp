@@ -38,8 +38,6 @@
 		
 		<form:form action="${saveGameLink}" modelAttribute="game" method="POST">
 
-			<!-- need to associate this data with game id -->
-			<form:hidden path="id" />
 			<table>
 				<tbody>
 					<c:choose>
@@ -50,11 +48,17 @@
 							</tr>
 						</c:when>
 						<c:otherwise>
-							<select name="category">
-								<option value="category_id">game1</option>
-								<option value="category_id">game2</option>
-								<option value="category_id">game3</option>
-							</select>
+							<tr>
+								<td><label>Select Game:</label></td>
+								<td>
+									<select name="game">
+										<c:forEach var="tempGame" items="${games}">
+											<option value="${tempGame.id}">${tempGame.title}</option>
+										</c:forEach> 
+									</select>
+								</td>
+							</tr>
+							
 						</c:otherwise>
 					</c:choose>
 					
@@ -63,8 +67,6 @@
 						<td><label></label></td>
 						<td><input type="submit" value="Save" class="save" /></td>
 					</tr>
-
-				
 				</tbody>
 			</table>
 		
