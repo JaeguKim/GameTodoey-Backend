@@ -51,11 +51,13 @@
 							<tr>
 								<td><label>Select Game:</label></td>
 								<td>
-									<select name="game">
+									<select name="id">
 										<c:forEach var="tempGame" items="${games}">
 											<option value="${tempGame.id}">${tempGame.title}</option>
 										</c:forEach> 
 									</select>
+									
+									
 								</td>
 							</tr>
 							

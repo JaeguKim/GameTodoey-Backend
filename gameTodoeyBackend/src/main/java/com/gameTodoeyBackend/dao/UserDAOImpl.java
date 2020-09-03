@@ -61,8 +61,9 @@ public class UserDAOImpl implements UserDAO {
 	public void addGame(int userId, Game theGame) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
-		User theUser = currentSession.get(User.class, userId);
-		theUser.addGame(theGame);
+		String queryString = String.format("Insert Into game_user values (%s, %s)", theGame.getId(),userId);
+		Query theQuery = currentSession.createNativeQuery(queryString);
+		theQuery.executeUpdate();
 	}
 
 	@Override
