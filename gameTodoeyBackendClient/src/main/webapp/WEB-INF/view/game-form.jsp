@@ -42,16 +42,23 @@
 			<form:hidden path="id" />
 			<table>
 				<tbody>
-					<tr>
-						<td><label>title:</label></td>
-						<td><form:input path="title" /></td>
-					</tr>
-				
-					<tr>
-						<td><label>popularity:</label></td>
-						<td><form:input path="popularity" /></td>
-					</tr>
-
+					<c:choose>
+						<c:when test="${userId == 0}">
+							<tr>
+								<td><label>title:</label></td>
+								<td><form:input path="title" /></td>
+							</tr>
+						</c:when>
+						<c:otherwise>
+							<select name="category">
+								<option value="category_id">game1</option>
+								<option value="category_id">game2</option>
+								<option value="category_id">game3</option>
+							</select>
+						</c:otherwise>
+					</c:choose>
+					
+					
 					<tr>
 						<td><label></label></td>
 						<td><input type="submit" value="Save" class="save" /></td>
