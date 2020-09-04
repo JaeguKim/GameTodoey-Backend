@@ -2,6 +2,7 @@ package com.gameTodoeyBackend.dao;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -43,7 +44,9 @@ public class UserDAOImpl implements UserDAO {
 		
 		User theUser = currentSession.get(User.class,theId);
 		
-		return theUser.getGames();
+	    Hibernate.initialize(theUser.getGames());
+		
+	    return theUser.getGames();
 	}
 	
 	@Override
