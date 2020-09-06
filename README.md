@@ -3,11 +3,11 @@
 This is backend server program of [GameTodoey](https://github.com/JaeguKim/GameTodoey) iOS app.  
 ## System Architecture 
   
-![image](image/serviceArchitecture.png)
-  
+![image](img/serviceArchitecture.png)
+
 ## ER Diagram  
   
-![image](image/ERDiagram.png)  
+![image](img/ERDiagram.png)  
   
 ## Main Function  
 1. CRUD User's data  
@@ -15,4 +15,4 @@ This is backend server program of [GameTodoey](https://github.com/JaeguKim/GameT
 3. CRUD Review's data  
   
 ## Sample Webpage  
-![image](image/game.png)  
+![image](img/game.png)  
