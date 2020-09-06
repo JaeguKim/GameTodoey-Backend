@@ -7,7 +7,7 @@ This is backend server program of [GameTodoey](https://github.com/JaeguKim/GameT
 
 ## ER Diagram  
   
-![image](img/ERDiagram.png)  
+![image](img/ERdiagram.png)  
   
 ## Main Function  
 1. CRUD User's data  
