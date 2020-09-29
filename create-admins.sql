@@ -1,3 +1,8 @@
+DROP DATABASE  IF EXISTS `spring_security_demo_bcrypt`;
+
+CREATE DATABASE  IF NOT EXISTS `spring_security_demo_bcrypt`;
+USE `spring_security_demo_bcrypt`;
+
 --
 -- Table structure for table `users`
 --
