@@ -6,33 +6,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gameTodoeyBackend.dao.UserDAO;
+import com.gameTodoeyBackend.dao.AccountDAO;
 import com.gameTodoeyBackend.entity.Game;
-import com.gameTodoeyBackend.entity.User;
+import com.gameTodoeyBackend.entity.Account;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class AccountServiceImpl implements AccountService {
 
 	@Autowired
-	private UserDAO userDAO;
+	private AccountDAO userDAO;
 	
 	@Override
 	@Transactional
-	public List<User> getUsers() {
-		return userDAO.getUsers();
+	public List<Account> getAccounts() {
+		return userDAO.getAccounts();
 	}
 	
 	@Override
 	@Transactional
-	public List<Game> getGamesOfUser(int userId) {
-		return userDAO.getGamesOfUser(userId);
+	public List<Game> getGamesOfAccount(int userId) {
+		return userDAO.getGamesOfAccount(userId);
 	}
 	
 	@Override
 	@Transactional
-	public void saveUser(User theUser) {
+	public void saveAccount(Account theUser) {
 
-		userDAO.saveUser(theUser);
+		userDAO.saveAccount(theUser);
 	}
 	
 	@Override
@@ -44,16 +44,16 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	@Transactional
-	public User getUser(int theId) {
+	public Account getAccount(int theId) {
 		
-		return userDAO.getUser(theId);
+		return userDAO.getAccount(theId);
 	}
 
 	@Override
 	@Transactional
-	public void deleteUser(int theId) {
+	public void deleteAccount(int theId) {
 
-		userDAO.deleteUser(theId);
+		userDAO.deleteAccount(theId);
 	}
 
 

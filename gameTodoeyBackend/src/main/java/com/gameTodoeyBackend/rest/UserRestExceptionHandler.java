@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class UserRestExceptionHandler {
 	
 	@ExceptionHandler
-	public ResponseEntity<UserErrorResponse> handleException(UserNotFoundException exc) {
+	public ResponseEntity<AccountErrorResponse> handleException(AccountNotFoundException exc) {
 		
-		UserErrorResponse error = new UserErrorResponse(HttpStatus.NOT_FOUND.value(),exc.getMessage(),System.currentTimeMillis());
+		AccountErrorResponse error = new AccountErrorResponse(HttpStatus.NOT_FOUND.value(),exc.getMessage(),System.currentTimeMillis());
 		return new ResponseEntity<>(error,HttpStatus.NOT_FOUND);
 	}
 	
 	@ExceptionHandler
-	public ResponseEntity<UserErrorResponse> handleException(Exception exc) {
+	public ResponseEntity<AccountErrorResponse> handleException(Exception exc) {
 		
-		UserErrorResponse error = new UserErrorResponse(HttpStatus.BAD_REQUEST.value(),exc.getMessage(),System.currentTimeMillis());
+		AccountErrorResponse error = new AccountErrorResponse(HttpStatus.BAD_REQUEST.value(),exc.getMessage(),System.currentTimeMillis());
 		return new ResponseEntity<>(error,HttpStatus.BAD_REQUEST);
 	}
 }

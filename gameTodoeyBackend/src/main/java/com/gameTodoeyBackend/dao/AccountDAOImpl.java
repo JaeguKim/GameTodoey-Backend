@@ -10,39 +10,39 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gameTodoeyBackend.entity.Game;
-import com.gameTodoeyBackend.entity.User;
+import com.gameTodoeyBackend.entity.Account;
 
 @Repository
-public class UserDAOImpl implements UserDAO {
+public class AccountDAOImpl implements AccountDAO {
 
 	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
 			
 	@Override
-	public List<User> getUsers() {
+	public List<Account> getAccounts() {
 		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 				
 		// create a query  ... sort by last name
-		Query<User> theQuery = 
-				currentSession.createQuery("from User order by lastName",
-						User.class);
+		Query<Account> theQuery = 
+				currentSession.createQuery("from Account order by lastName",
+						Account.class);
 		
 		// execute query and get result list
-		List<User> users = theQuery.getResultList();
+		List<Account> users = theQuery.getResultList();
 				
 		// return the results		
 		return users;
 	}
 
 	@Override
-	public List<Game> getGamesOfUser(int theId) {
+	public List<Game> getGamesOfAccount(int theId) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		User theUser = currentSession.get(User.class,theId);
+		Account theUser = currentSession.get(Account.class,theId);
 		
 	    Hibernate.initialize(theUser.getGames());
 		
@@ -50,47 +50,47 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public void saveUser(User theUser) {
+	public void saveAccount(Account theAccount) {
 
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// save/update the customer
-		currentSession.saveOrUpdate(theUser);
+		currentSession.saveOrUpdate(theAccount);
 		
 	}
 	
 	@Override
-	public void addGame(int userId, Game theGame) {
+	public void addGame(int accountId, Game theGame) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
-		String queryString = String.format("Insert Into game_user values (%s, %s)", theGame.getId(),userId);
+		String queryString = String.format("Insert Into game_user values (%s, %s)", theGame.getId(),accountId);
 		Query theQuery = currentSession.createNativeQuery(queryString);
 		theQuery.executeUpdate();
 	}
 
 	@Override
-	public User getUser(int theId) {
+	public Account getAccount(int theId) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// now retrieve/read from database using the primary key
-		User theUser = currentSession.get(User.class, theId);
+		Account theAccount = currentSession.get(Account.class, theId);
 		
-		return theUser;
+		return theAccount;
 	}
 
 	@Override
-	public void deleteUser(int theId) {
+	public void deleteAccount(int theId) {
 
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// delete object with primary key
 		Query theQuery = 
-				currentSession.createQuery("delete from User where id=:userId");
-		theQuery.setParameter("userId", theId);
+				currentSession.createQuery("delete from Account where id=:accountId");
+		theQuery.setParameter("accountId", theId);
 		
 		theQuery.executeUpdate();		
 	}

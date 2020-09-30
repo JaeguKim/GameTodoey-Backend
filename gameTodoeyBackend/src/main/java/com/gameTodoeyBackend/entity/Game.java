@@ -43,7 +43,7 @@ public class Game {
 	@JoinTable(name="game_user",joinColumns=@JoinColumn(name="game_id"),
 	inverseJoinColumns=@JoinColumn(name="user_id"))
 	@JsonIgnore
-	private List<User> users;
+	private List<Account> users;
 	
 	public Game() {
 		
@@ -89,15 +89,15 @@ public class Game {
 		reviews.add(theReview);
 	}
 	
-	public List<User> getUsers() {
+	public List<Account> getUsers() {
 		return users;
 	}
 
-	public void setUsers(List<User> users) {
+	public void setUsers(List<Account> users) {
 		this.users = users;
 	}
 	
-	public void addUser(User user) { 
+	public void addUser(Account user) { 
 		
 		if (users == null) {
 			users = new ArrayList<>();

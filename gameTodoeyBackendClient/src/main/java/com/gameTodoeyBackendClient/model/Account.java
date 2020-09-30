@@ -1,13 +1,13 @@
 package com.gameTodoeyBackendClient.model;
 
-public class User {
+public class Account {
 	
 	private int id;
 	private String firstName;
 	private String lastName;
 	private String email;
 	
-	public User() {
+	public Account() {
 		
 	}
 	
@@ -45,6 +45,6 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Account [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 }

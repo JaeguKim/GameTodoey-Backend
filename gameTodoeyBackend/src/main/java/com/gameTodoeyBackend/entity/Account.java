@@ -18,8 +18,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="user")
-public class User {
+@Table(name="account")
+public class Account {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class User {
 	@JsonIgnore
 	private List<Game> games;
 	
-	public User() {
+	public Account() {
 		
 	}
 	

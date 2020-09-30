@@ -4,7 +4,7 @@
 <html>
 
 <head>
-	<title>Save User</title>
+	<title>Save Account</title>
 
 	<link type="text/css"
 		  rel="stylesheet"
@@ -19,14 +19,14 @@
 	
 	<div id="wrapper">
 		<div id="header">
-			<h2>User Manager</h2>
+			<h2>Account Manager</h2>
 		</div>
 	</div>
 
 	<div id="container">
-		<h3>Save User</h3>
+		<h3>Save Account</h3>
 	
-		<form:form action="saveUser" modelAttribute="user" method="POST">
+		<form:form action="saveAccount" modelAttribute="account" method="POST">
 
 			<!-- need to associate this data with customer id -->
 			<form:hidden path="id" />

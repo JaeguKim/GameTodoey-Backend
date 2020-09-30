@@ -12,18 +12,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.gameTodoeyBackendClient.model.Game;
-import com.gameTodoeyBackendClient.model.User;
+import com.gameTodoeyBackendClient.model.Account;
 
 @Service
-public class UserServiceRestClientImpl implements UserService {
+public class AccountServiceRestClientImpl implements AccountService {
 
 	private RestTemplate restTemplate;
 	private String restUrl;
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	@Autowired
-	public UserServiceRestClientImpl(RestTemplate theRestTemplate, 
-			@Value("${user.rest.url}") String theUrl) {
+	public AccountServiceRestClientImpl(RestTemplate theRestTemplate, 
+			@Value("${account.rest.url}") String theUrl) {
 		
 		restTemplate = theRestTemplate;
 		restUrl = theUrl;
@@ -32,28 +32,28 @@ public class UserServiceRestClientImpl implements UserService {
 	}
 	
 	@Override
-	public List<User> getUsers() {
+	public List<Account> getAccounts() {
 		
-		logger.info("in getUsers(): Calling REST API " + restUrl);
+		logger.info("in getAccounts(): Calling REST API " + restUrl);
 
 		// make REST call
-		ResponseEntity<List<User>> responseEntity = 
+		ResponseEntity<List<Account>> responseEntity = 
 											restTemplate.exchange(restUrl, HttpMethod.GET, null, 
-																  new ParameterizedTypeReference<List<User>>() {});
+																  new ParameterizedTypeReference<List<Account>>() {});
 
 		// get the list of users from response
-		List<User> users = responseEntity.getBody();
+		List<Account> accounts = responseEntity.getBody();
 
-		logger.info("in getUsers(): users" + users);
+		logger.info("in getAccounts(): accounts" + accounts);
 		
-		return users;
+		return accounts;
 	}
 
 	@Override
-	public List<Game> getGamesOfUser(int theId) {
+	public List<Game> getGamesOfAccount(int theId) {
 		
 		String requestUrl = String.format("%s/games/%s", restUrl,theId);
-		logger.info("in getGamesOfUser(): Calling REST API " + requestUrl);
+		logger.info("in getGamesOfAccount(): Calling REST API " + requestUrl);
 
 		// make REST call
 		ResponseEntity<List<Game>> responseEntity = 
@@ -70,42 +70,42 @@ public class UserServiceRestClientImpl implements UserService {
 	}
 	
 	@Override
-	public User getUser(int theId) {
-		logger.info("in getUser(): Calling REST API " + restUrl);
+	public Account getAccount(int theId) {
+		logger.info("in getAccount(): Calling REST API " + restUrl);
 
 		// make REST call
-		User theUser = 
+		Account theAccount = 
 				restTemplate.getForObject(restUrl + "/" + theId, 
-										  User.class);
+										  Account.class);
 
-		logger.info("in saveUser(): theUser=" + theUser);
+		logger.info("in saveAccount(): theUser=" + theAccount);
 		
-		return theUser;
+		return theAccount;
 	}
 	
 	@Override
-	public void saveUser(User theUser) {
+	public void saveAccount(Account theAccount) {
 		
 		logger.info("in saveUser(): Calling REST API " + restUrl);
 		
-		int userId = theUser.getId();
+		int accountId = theAccount.getId();
 
 		// make REST call
-		if (userId == 0) {
+		if (accountId == 0) {
 			// add employee
-			restTemplate.postForEntity(restUrl, theUser, String.class);			
+			restTemplate.postForEntity(restUrl, theAccount, String.class);			
 		
 		} else {
 			// update employee
-			restTemplate.put(restUrl, theUser);
+			restTemplate.put(restUrl, theAccount);
 		}
 
-		logger.info("in saveUser(): success");	
+		logger.info("in saveAccount(): success");	
 
 	}
 	
 	@Override
-	public void addGame(int userId, Game theGame) {
+	public void addGameToAccount(int userId, Game theGame) {
 		
 		String requestUrl = String.format("%s/games/%s", restUrl,userId);
 		logger.info("in addGame(): Calling REST API " + requestUrl);
@@ -116,7 +116,7 @@ public class UserServiceRestClientImpl implements UserService {
 	}
 	
 	@Override
-	public void deleteUser(int theId) {
+	public void deleteAccount(int theId) {
 		logger.info("in deleteUser(): Calling REST API " + restUrl);
 
 		// make REST call

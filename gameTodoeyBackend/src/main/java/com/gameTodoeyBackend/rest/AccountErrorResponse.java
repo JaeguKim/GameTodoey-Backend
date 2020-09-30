@@ -1,16 +1,16 @@
 package com.gameTodoeyBackend.rest;
 
-public class UserErrorResponse {
+public class AccountErrorResponse {
 	
 	private int status;
 	private String message;
 	private long timeStamp;
 	
-	public UserErrorResponse() {
+	public AccountErrorResponse() {
 		
 	}
 
-	public UserErrorResponse(int status, String message, long timeStamp) {
+	public AccountErrorResponse(int status, String message, long timeStamp) {
 		super();
 		this.status = status;
 		this.message = message;

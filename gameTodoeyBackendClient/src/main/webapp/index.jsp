@@ -27,7 +27,7 @@
 	<div id="container">
 	
 		<div id="content">
-			<p><a href="${pageContext.request.contextPath}/user/list">User List</a></p>
+			<p><a href="${pageContext.request.contextPath}/account/list">Account List</a></p>
 			<p><a href="${pageContext.request.contextPath}/game/list">Game List</a></p>
 		</div>
 	

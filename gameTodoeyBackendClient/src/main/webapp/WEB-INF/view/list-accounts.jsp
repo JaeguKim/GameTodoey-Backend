@@ -19,7 +19,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>User Manager</h2>
+			<h2>Account Manager</h2>
 		</div>
 	</div>
 	
@@ -29,7 +29,7 @@
 		
 			<!-- put new button: Add Customer -->
 		
-			<input type="button" value="Add User"
+			<input type="button" value="Add Account"
 				   onclick="window.location.href='showFormForAdd'; return false;"
 				   class="add-button"
 			/>
@@ -45,32 +45,32 @@
 				</tr>
 				
 				<!-- loop over and print our customers -->
-				<c:forEach var="tempUser" items="${users}">
+				<c:forEach var="tempAccount" items="${accounts}">
 				
 					<!-- construct an "update" link with customer id -->
 					<c:url var="updateLink" value="/user/showFormForUpdate">
-						<c:param name="userId" value="${tempUser.id}" />
+						<c:param name="accountId" value="${tempAccount.id}" />
 					</c:url>					
 
 					<!-- construct an "delete" link with customer id -->
 					<c:url var="deleteLink" value="/user/delete">
-						<c:param name="userId" value="${tempUser.id}" />
+						<c:param name="accountId" value="${tempAccount.id}" />
 					</c:url>					
 					
 					<!-- construct an "delete" link with customer id -->
-					<c:url var="gamesLink" value="/user/game/${tempUser.id}"></c:url>
+					<c:url var="gamesLink" value="/account/game/${tempAccount.id}"></c:url>
 					
 					<tr>
-						<td> ${tempUser.firstName} </td>
-						<td> ${tempUser.lastName} </td>
-						<td> ${tempUser.email} </td>
+						<td> ${tempAccount.firstName} </td>
+						<td> ${tempAccount.lastName} </td>
+						<td> ${tempAccount.email} </td>
 						
 						<td>
 							<!-- display the update link -->
 							<a href="${updateLink}">Update</a>
 							|
 							<a href="${deleteLink}"
-							   onclick="if (!(confirm('Are you sure you want to delete this user?'))) return false">Delete</a>
+							   onclick="if (!(confirm('Are you sure you want to delete this account?'))) return false">Delete</a>
 							|
 							<a href="${gamesLink}">Games</a>
 						</td>

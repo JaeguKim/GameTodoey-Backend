@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.gameTodoeyBackendClient.model.Game;
-import com.gameTodoeyBackendClient.model.User;
+import com.gameTodoeyBackendClient.model.Account;
 
 @Service
 public class GameServiceRestClientImpl implements GameService {
