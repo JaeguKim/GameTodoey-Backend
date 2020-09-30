@@ -12,6 +12,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -104,7 +105,9 @@ public class RegistrationController {
         User tempUser = new User(userName, encodedPassword, authorities);
 
         // save user in the database
-        userDetailsManager.createUser(tempUser);		
+        JdbcUserDetailsManager jdbcUserDetailsManager = (JdbcUserDetailsManager)userDetailsManager;
+		jdbcUserDetailsManager.setCreateUserSql("insert into Admins (Username, Password, Enabled) values (?,?,?)");
+		jdbcUserDetailsManager.createUser(tempUser);		
 		
         logger.info("Successfully created user: " + userName);
         
@@ -114,9 +117,11 @@ public class RegistrationController {
 	private boolean doesUserExist(String userName) {
 		
 		logger.info("Checking if user exists: " + userName);
-		
+		JdbcUserDetailsManager jdbcUserDetailsManager = (JdbcUserDetailsManager)userDetailsManager;
+		jdbcUserDetailsManager.setUserExistsSql("select username from Admins where username = ?");
 		// check the database if the user already exists
-		boolean exists = userDetailsManager.userExists(userName);
+	
+		boolean exists = jdbcUserDetailsManager.userExists(userName);
 		
 		logger.info("User: " + userName + ", exists: " + exists);
 		
