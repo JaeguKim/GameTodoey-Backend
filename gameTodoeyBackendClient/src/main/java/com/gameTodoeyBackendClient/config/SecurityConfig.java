@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-
+		
 		auth.jdbcAuthentication().dataSource(securityDataSource);
 
 	}
@@ -55,11 +55,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
 	public UserDetailsManager userDetailsManager() {
-		
 		JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
-		
 		jdbcUserDetailsManager.setDataSource(securityDataSource);
-		
+		//jdbcUserDetailsManager.setUsersByUsernameQuery("select username, password, enabled from Admins where username = ?");
+		//jdbcUserDetailsManager.setUserExistsSql("select username from Admins where username = ?");
+		//jdbcUserDetailsManager.setCreateUserSql("insert into Admins (Username, Password, Enabled) values (?,?,?)");
+
 		return jdbcUserDetailsManager; 
 	}
 }

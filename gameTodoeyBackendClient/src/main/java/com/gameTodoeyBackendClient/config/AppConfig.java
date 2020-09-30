@@ -84,8 +84,7 @@ public class AppConfig implements WebMvcConfigurer {
 		
 		logger.info(">>> security.jdbc.url=" + env.getProperty("security.jdbc.url"));
 		logger.info(">>> security.jdbc.user=" + env.getProperty("security.jdbc.user"));
-		
-		
+	
 		// set database connection props
 		
 		securityDataSource.setJdbcUrl(env.getProperty("security.jdbc.url"));

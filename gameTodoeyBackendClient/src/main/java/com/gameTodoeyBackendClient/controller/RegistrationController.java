@@ -87,11 +87,7 @@ public class RegistrationController {
 			return "registration-form";			
 		}
 		
-		//
-		// whew ... we passed all of the validation checks!
-		// let's get down to business!!!
-		//
-		
+
 		// encrypt the password
         String encodedPassword = passwordEncoder.encode(theGameTodoeyAdmin.getPassword());
 
@@ -105,10 +101,7 @@ public class RegistrationController {
         User tempUser = new User(userName, encodedPassword, authorities);
 
         // save user in the database
-        JdbcUserDetailsManager jdbcUserDetailsManager = (JdbcUserDetailsManager)userDetailsManager;
-		jdbcUserDetailsManager.setCreateUserSql("insert into Admins (Username, Password, Enabled) values (?,?,?)");
-		jdbcUserDetailsManager.createUser(tempUser);		
-		
+		userDetailsManager.createUser(tempUser);
         logger.info("Successfully created user: " + userName);
         
         return "registration-confirmation";		
@@ -117,12 +110,9 @@ public class RegistrationController {
 	private boolean doesUserExist(String userName) {
 		
 		logger.info("Checking if user exists: " + userName);
-		JdbcUserDetailsManager jdbcUserDetailsManager = (JdbcUserDetailsManager)userDetailsManager;
-		jdbcUserDetailsManager.setUserExistsSql("select username from Admins where username = ?");
-		// check the database if the user already exists
-	
-		boolean exists = jdbcUserDetailsManager.userExists(userName);
 		
+		// check the database if the user already exists
+		boolean exists = userDetailsManager.userExists(userName);
 		logger.info("User: " + userName + ", exists: " + exists);
 		
 		return exists;
