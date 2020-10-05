@@ -20,7 +20,7 @@ backend server program for collecting data from GameTodoey and providing data fo
 ![image](img/game.png)  
   
 ## Version of tools  
-* Spring Framework - 5.0.6 RELEASE  
+* Spring Framework - 5.0.6.RELEASE  
 * Hibernate - 5.4.1 Final  
 * MySQL - 5.1.45  
 * C3PO - 0.9.5.2  
