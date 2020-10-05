@@ -9,7 +9,12 @@ import com.gameTodoeyBackendClient.admin.GameTodoeyAdmin;
 
 @Controller
 public class LoginController {
-
+	
+	@GetMapping("/")
+	public String showHome() {
+		return "home";
+	}
+	
 	@GetMapping("/showMyLoginPage")
 	public String showMyLoginPage() {
 		

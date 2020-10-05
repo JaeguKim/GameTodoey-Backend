@@ -1,6 +1,6 @@
-
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 
 <!DOCTYPE html>
 
@@ -29,8 +29,14 @@
 		<div id="content">
 			<p><a href="${pageContext.request.contextPath}/account/list">Account List</a></p>
 			<p><a href="${pageContext.request.contextPath}/game/list">Game List</a></p>
-		</div>
+			
 	
+		</div>
+		<!-- Add a logout button -->
+		<form:form action="${pageContext.request.contextPath}/logout"
+			method="POST">
+			<input type="submit" value="logout" />
+		</form:form>
 	</div>
 	
 
