@@ -14,6 +14,7 @@ backend server program for collecting data from GameTodoey and providing data fo
 * CRUD Game's data  
 * CRUD Review's data  
 * CRUD Game_User's data  
+* Login/Logout
   
 ## Sample Webpage  
 ![image](img/game.png)  
@@ -25,3 +26,4 @@ backend server program for collecting data from GameTodoey and providing data fo
 * C3PO - 0.9.5.2  
 * MAVEN - 1.8  
 * JAVA - 1.8  
+* Spring Security - 5.0.3.RELEASE
