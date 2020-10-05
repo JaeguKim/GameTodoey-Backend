@@ -32,10 +32,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-			.antMatchers("/user/showForm*").hasAnyRole("USER_ADMIN", "SUPER_ADMIN")
-			.antMatchers("/user/save*").hasAnyRole("USER_ADMIN", "SUPER_ADMIN")
-			.antMatchers("/user/delete").hasRole("SUPER_ADMIN")
-			.antMatchers("/user/**").hasRole("NORMAL_ADMIN")
+			.antMatchers("/account/showForm*").hasAnyRole("USER_ADMIN", "SUPER_ADMIN")
+			.antMatchers("/account/save*").hasAnyRole("USER_ADMIN", "SUPER_ADMIN")
+			.antMatchers("/account/delete").hasRole("SUPER_ADMIN")
+			.antMatchers("/account/**").hasRole("NORMAL_ADMIN")
 			.antMatchers("/game/showForm*").hasAnyRole("USER_ADMIN", "SUPER_ADMIN")
 			.antMatchers("/game/save*").hasAnyRole("USER_ADMIN", "SUPER_ADMIN")
 			.antMatchers("/game/delete").hasRole("SUPER_ADMIN")
