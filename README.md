@@ -15,6 +15,9 @@ backend server program for collecting data from GameTodoey and providing data fo
 * CRUD Review's data  
 * CRUD Game_User's data  
 * Login/Logout
+
+## API Documentation
+[Swagger Hub Link](https://app.swaggerhub.com/apis-docs/JaeguKim/GameTodoey-Admin-API/0.0.1)  
   
 ## Sample Webpage  
 ![image](img/game.png)  
