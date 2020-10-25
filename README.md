@@ -21,7 +21,7 @@ backend server program for collecting data from GameTodoey and providing data fo
   
 ## Sample Webpage  
 ![image](img/game.png)  
-  
+
 ## Version of tools  
 * Spring Framework - 5.0.6.RELEASE  
 * Hibernate - 5.4.1 Final  
