@@ -1,6 +1,6 @@
 # GameTodoey-Backend
 ## Summary  
-backend server program for collecting data from GameTodoey and providing data for [GameTodoey](https://github.com/JaeguKim/GameTodoey) iOS app.  
+backend server program for collecting data from [GameTodoey](https://github.com/JaeguKim/GameTodoey) and providing data for [GameTodoey](https://github.com/JaeguKim/GameTodoey) iOS app.  
 ## System Architecture 
   
 ![image](img/serviceArchitecture.png)
